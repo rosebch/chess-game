@@ -5,6 +5,7 @@ import { Board } from './models/Board';
 import {Player} from "./models/Player";
 import {Colors} from "./models/Colors";
 import LostFigures from "./components/LostFigures";
+import Timer from "./components/Timer";
 
 const App = () => {
   const [board, setBoard] = useState(new Board())
@@ -29,7 +30,11 @@ const App = () => {
   }
 
   return (
-    <div className="pp">
+    <div className="App">
+      <Timer
+        restart={restart}
+        currentPlayer={currentPlayer}
+      />
       <BoardComponent 
         board={board}
         setBoard={setBoard}
